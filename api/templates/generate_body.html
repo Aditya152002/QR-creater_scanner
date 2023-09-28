@@ -1,0 +1,64 @@
+<style>
+    .creator{
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: medium;
+        margin: 2.5%;
+    }
+    .text-div{
+        text-align: center;
+    }
+    .create-div{
+        text-align: center;
+        padding: 20px;
+       
+    }
+    .text{
+        width: 1000px;     
+    }
+    .create{
+        height: 40px;
+        width:200px;
+        background-color:rgb(23, 156, 239);
+        border: none;
+        border-radius: 5px;
+        color:#fff;
+        font-size: large;
+        font-weight: bolder;
+    }
+    .qrcode{
+        height: 500px;
+    }
+    .div-qrcode{
+        text-align: center;
+    }
+    
+
+</style>
+<div class="creator">
+<h2>Create your QR Code here</h2>
+<form action=" {{ url_for('check') }}", method="post" >
+<div style="text-align: center;"><div class="text-div">
+<textarea  name="qrdetail" id="textarea_gen" placeholder="Write your text of QR code" spellcheck="true" wrap="soft" class="text" maxlength="100">
+</textarea>
+</div></div>
+<div class="create-div">
+
+<button type="submit" class="create" aria-keyshortcuts="Control+Space" >
+    Create
+</button>
+</div>
+</div>
+
+<script type="text/javascript">
+    // Textarea Resizing
+    let qrcode = document.getElementById("img_qr")
+    textarea= document.querySelector("#textarea_gen");
+    textarea.addEventListener('input',autoResize, false);
+    function autoResize(){
+        this.style.height= 'auto';
+        this.style.height= this.scrollHeight + 'px';
+    
+    }
+    
+    
+</script>
