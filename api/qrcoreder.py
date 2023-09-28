@@ -25,4 +25,4 @@ def check():
     qrimg= api.Creator.qrcreator(qrdetail)
     return render_template('generator.html',qrimg= qrimg,check=check)
 
-app.run(debug=True)
+#app.run(debug=True)
